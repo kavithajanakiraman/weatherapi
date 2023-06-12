@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div class="all">
+            <div class="center">
+                <div class="left">
+                    <p><i class="fa fa-thermometer-empty" aria-hidden="true"></i> <br>Weathery</p>
+                    <hr>
+                    <i class="fa fa-square" aria-hidden="true"></i>
+                    <i class="fa fa-map" aria-hidden="true"></i>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <i class="fa fa-spinner" aria-hidden="true"></i>
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    <i class="fa fa-cog" aria-hidden="true"></i>
+                    <br>
+                    <i class="fa fa-bell" aria-hidden="true"></i>
+                    <img src="../static/image/my.jpg" alt="">
+
+                </div>
+                <div class="cen">
+                    <div class="cen1">
+                        <form action="#" method="POST">
+                            <label for=""><input type="text" name="city" placeholder="Enter City:"></label>
+                            <input type="submit" value="" class="submit" style="background-image: url(../static/image/search.png); background-repeat: no-repeat; position: absolute; left: 440px; background-size: contain; width: 20px; font-size: 2px; margin-top: 8px; border: none; background-color: transparent;">
+                        </form><br>
+                        {%for i in data%}
+                        <img src="../static/image/sun.png" alt="">
+                        <h1> {{i.temp}}<sup>&bull;</sup>C </h1>
+                        <p><i class="fa fa-cloud" aria-hidden="true"></i> {{i.des}}</p>
+                       <hr>
+                       <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{i.city}}</p>
+                       <p><i class="fa fa-calendar" aria-hidden="true"></i> {{i.lot}}</p>
+                       {%endfor%}
+                    </div>
+                    <h3>7days forecast</h3>
+                    <div class="cen2">
+                        {%for i in data%}
+                        <p><img src="../static/image/c1.png" alt=""> +35 <sup>&bull;</sup>/ +18 <span>24 may</span><span>Wednesday</span></p>
+                        <p><img src="../static/image/sun.png" alt=""> +32 <sup>&bull;</sup>/ +14 <span>23 may</span><span>Tuesday</span></p>
+                        <p><img src="../static/image/c3.png" alt=""> +31 <sup>&bull;</sup>/ +16 <span>22 may</span><span>Monday</span></p>
+                        <p><img src="../static/image/cloud1.png" alt=""> +34 <sup>&bull;</sup>/ +12 <span>21 may</span><span>Sunday</span></p>
+                        <div class="tomm">
+                            <div class="iii">
+                                <img src="../static/image/sun.png" alt="">
+                            </div>
+                            <div class="iii1">
+                                <h3>Tomorrow</h3>
+                                <h2>{{i.temp}} <sup>&bull;</sup> C</h2>
+                                <p>party cloud</p>
+                            </div>
+                            <div class="iii2">
+                                <img src="../static/image/th-1766946966.jpg" alt="">
+                            </div>
+                        </div>
+                        {%endfor%}
+                    </div>
+                </div>
+                <div class="right">
+                  <div class="all-right1">
+                    <h3>Today's Highlight</h3>
+                    <div class="right-flex1">    
+                        <div class="right1">
+                            <div class="right1-sub1">
+                                {%for i in data%}
+                                <div class="imag1">
+                                    <img src="../static/image/th-3836388290.jpg" alt="">
+                                </div>
+                                <div class="imag2">
+                                    <div class="one">
+                                        <ul>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                        </ul>
+                                      </div>  
+                                </div>
+                                <div class="imag3">
+                                    <p><span>{{i.wed}}km</span><span>5:01 am</span></p>
+                                </div>
+                                {%endfor%}
+                            </div>
+                            <div class="right1-sub2">
+                                {%for i in data%}
+                                <div class="sub22">
+                                    <h3>Humidity</h3>
+                                    <p>{{i.humidity}} <span>%</span></p>
+                                </div>
+                                <div class="sub23">
+                                    <p><i class="fa fa-tint" aria-hidden="true"></i></p>
+                                    <p>The drew point is 27% right now.</p>
+                                </div>
+                                {%endfor%}
+                            </div>
+                        </div>
+                        <div class="right1">
+                            <div class="right1-sub1">
+                                {%for i in data%}
+                                <h4>UV Index</h4>
+                                <div role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" style="--value: 56"></div>
+                                <span>{{i.uv_index}} UV</span>
+                                {%endfor%}
+                            </div>
+                            <div class="right1-sub2">
+                                {%for i in data%}
+                                <div class="sub22">
+                                    <h3>Visibility</h3>
+                                    <p> {{i.visibility}}<span>km</span></p>
+                                </div>
+                                <div class="sub23">
+                                    <p><i class="fa fa-eye" aria-hidden="true"></i></p>
+                                    <p>Haze is affecting visibility</p>
+                                </div>
+                                {%endfor%}
+                            </div>
+                        </div>
+                        <div class="right1">
+                            <div class="right1-sub11">
+                                {%for i in data%}
+                                <div class="right1111">
+                                    <h3>Sunrise & Sunset</h3>
+                                    <img src="../static/image/sunset.webp" alt="">
+                                    
+                                    <span class="circle"><i class="fa fa-circle-thin" aria-hidden="true"></i></span>
+                                </div>
+                                <div class="right222">
+                                    <p><span>Sunrise at 5:45am</span> <span>sunset at 6:50pm </span></p>
+                                   
+                                </div>
+                                {%endfor%}
+                            </div>
+                            <div class="right1-sub2">
+                                {%for i in data%}
+                                <div class="sub22">
+                                    <h3>Feels Like</h3>
+                                    <p><i class="fa fa-thermometer-empty" aria-hidden="true"></i> {{i.feelslike}} <sup>&bull;</sup></p>
+                                </div>
+                                <div class="sub23">
+                                    <p><i class="fa fa-tint" aria-hidden="true"></i></p>
+                                    <p>Humidity is making it feel hotter</p>
+                                </div>
+                                {%endfor%}
+                            </div>
+                        </div>
+                   </div>
+                   </div>
+                   <h3>Weather condition map</h3>
+                   <div class="right-flex2">
+                    {%for i in data%}
+                    <div class="cc">
+                        <h3>{{i.city}}</h3>
+                        <h1>{{i.temp}} <sup>&bull;</sup>C</h1>
+                        <p>Wind speed <span>{{i.wed}}Km</span> | Feels like <span> {{i.feelslike}} <sup>&bull;</sup>C</span> </p>
+                    </div>
+                    <img src="../static/image/4c64200f5b2e16f5957659f8b502bce3.gif" alt="">
+                   </div>
+                   {%endfor%}
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+   
+</body>
+</html>
